@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Corrientes Sociológicas y su Huella en el Derecho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --blue-900:#1E3A8A; /* títulos */
+      --blue-700:#1D4ED8; /* headers secciones */
+      --blue-100:#E0E7FF;
+      --gray-900:#111827;
+      --gray-700:#374151;
+      --gray-500:#6B7280; /* texto académico */
+      --gray-100:#F3F4F6;
+      --surface:#FFFFFF;
+      --orange-600:#F97316; /* énfasis */
+      --ring:#E5E7EB;
+      --shadow:0 10px 18px rgba(0,0,0,.06), 0 2px 6px rgba(0,0,0,.05);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:linear-gradient(180deg, #FAFBFF 0%, #F6F7FB 100%);color:var(--gray-900)}
+    body{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; line-height:1.5}
+    .wrap{max-width:1100px;margin:40px auto;padding:0 24px;position:relative}
+    header{margin-bottom:28px}
+    header h1{font-family:Merriweather, Georgia, serif;font-weight:700;font-size:34px;letter-spacing:.2px;margin:.2rem 0;color:var(--blue-900)}
+    header p.sub{margin:6px 0 0;color:var(--gray-500);font-weight:600}
+
+    /* Leyenda */
+    .legend{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 28px}
+    .chip{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:var(--gray-100);border:1px solid var(--ring);font-size:12px;color:var(--gray-700)}
+    .dot{width:12px;height:12px;border-radius:50%}
+
+    /* Diagrama vertical */
+    .flow{position:relative;padding-left:72px}
+    .rail{position:absolute;left:36px;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--blue-100),#eaf0ff)}
+
+    .node{position:relative;margin:22px 0;background:var(--surface);border:1px solid var(--ring);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+    .node .head{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--blue-700);color:white}
+    .node .head h2{margin:0;font-size:18px;letter-spacing:.4px}
+    .node .icon{flex:0 0 auto;width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.14);display:grid;place-items:center}
+    .node .body{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:16px 18px 18px;background:linear-gradient(180deg,#fff,#fbfbfe)}
+
+    /* Fotitos mínimas */
+    .mini{display:flex;gap:10px;align-items:center}
+    .avatar{width:44px;height:44px;border-radius:50%;border:1px solid var(--ring);background:linear-gradient(180deg,#f8fafc,#eef2ff);display:grid;place-items:center;font-size:10px;color:var(--gray-500);font-weight:700}
+    .mini .meta{font-size:13px;color:var(--gray-700)}
+    .mini .meta strong{display:block;color:var(--gray-900)}
+
+    .pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 10px;background:var(--blue-100);color:var(--blue-900);font-weight:700;font-size:12px;border:1px solid var(--ring)}
+
+    .example{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px dashed var(--ring);border-radius:12px;background:#FCFDFE}
+    .example svg{flex:0 0 auto}
+    .cite{font-size:12px;color:var(--gray-500);margin-top:10px}
+
+    /* Conectores flecha */
+    .arrow{position:absolute;left:52px;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:10px solid var(--orange-600)}
+
+    /* Colores por corriente (leyenda & bordes) */
+    .positivismo{--curr:#2752dd}
+    .organicismo{--curr:#2F855A}
+    .estructural{--curr:#111827}
+    .interaccionismo{--curr:#6B7280}
+    .materialismo{--curr:#F97316}
+    
+    .node[data-kind]{border-left:8px solid var(--curr)}
+    .chip[data-kind]{border-color:color-mix(in srgb, var(--curr) 50%, #e5e7eb);background:color-mix(in srgb, var(--curr) 7%, #F3F4F6)}
+    .chip[data-kind] .dot{background:var(--curr)}
+
+    /* Responsive */
+    @media (max-width:750px){
+      .flow{padding-left:56px}
+      .rail{left:28px}
+      .node .body{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Corrientes Sociológicas y su Huella en el Derecho</h1>
+      <p class="sub">Legados y Limitaciones en la Construcción Normativa</p>
+
+      <!-- Leyenda de colores por corriente -->
+      <div class="legend">
+        <span class="chip positivismo" data-kind><span class="dot"></span> Positivismo</span>
+        <span class="chip organicismo" data-kind><span class="dot"></span> Organicismo</span>
+        <span class="chip estructural" data-kind><span class="dot"></span> Estructural‑Funcionalismo</span>
+        <span class="chip interaccionismo" data-kind><span class="dot"></span> Interaccionismo</span>
+        <span class="chip materialismo" data-kind><span class="dot"></span> Materialismo Histórico</span>
+      </div>
+    </header>
+
+    <main class="flow">
+      <div class="rail" aria-hidden="true"></div>
+
+      <!-- 1. POSITIVISMO -->
+      <section class="node positivismo" data-kind>
+        <div class="head">
+          <div class="icon" aria-hidden="true">
+            <!-- Lupa científica -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="10" cy="10" r="7" stroke="#fff" stroke-width="2"/><line x1="15" y1="15" x2="22" y2="22" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h2>POSITIVISMO</h2>
+        </div>
+        <div class="body">
+          <div>
+            <span class="pill">Principio fundamental</span>
+          </div>
+          <div>
+            <p style="margin-top:0;color:var(--gray-700)"><strong>El conocimiento válido proviene de la observación empírica y el método científico.</strong></p>
+            <div class="mini" style="margin-top:6px">
+              <div class="avatar" title="Foto mínima">FOTO</div>
+              <div class="meta"><strong>Auguste Comte</strong> Padre de la sociología; sistematiza una ciencia de la sociedad que inspira al derecho como técnica normativa.</div>
+            </div>
+            <div class="mini">
+              <div class="avatar">FOTO</div>
+              <div class="meta"><strong>Émile Durkheim</strong> El derecho refleja la solidaridad social (mecánica/orgánica) y su evolución.</div>
+            </div>
+            <div class="example" style="margin-top:10px">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="3" width="14" height="18" rx="2" stroke="#1E3A8A" stroke-width="2"/><line x1="8" y1="8" x2="16" y2="8" stroke="#1E3A8A" stroke-width="2"/><line x1="8" y1="12" x2="16" y2="12" stroke="#1E3A8A" stroke-width="2"/></svg>
+              <div><strong>Ejemplo legislativo:</strong> Codificación moderna (p.ej., Código Civil francés, 1804) como racionalización normativa.</div>
+            </div>
+            <div class="cite">Comte, A. (1830‑42). <em>Curso de filosofía positiva</em>; Durkheim, É. (1893). <em>La división del trabajo social</em>.</div>
+          </div>
+        </div>
+      </section>
+      <div class="arrow" style="top:calc(100% + 6px)"></div>
+
+      <!-- 2. ORGANICISMO -->
+      <section class="node organicismo" data-kind>
+        <div class="head">
+          <div class="icon" aria-hidden>
+            <!-- Árbol -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c3 0 6 2.5 6 5.5 0 1.6-.7 3-1.9 4H20v2h-6v6h-4v-6H4v-2h3.9A5.4 5.4 0 0 1 6 7.5C6 4.5 9 2 12 2Z" fill="#fff"/></svg>
+          </div>
+          <h2>ORGANICISMO</h2>
+        </div>
+        <div class="body">
+          <div><span class="pill">Principio fundamental</span></div>
+          <div>
+            <p style="margin-top:0;color:var(--gray-700)"><strong>La sociedad funciona como un organismo: partes interdependientes cumplen funciones vitales.</strong></p>
+            <div class="mini"><div class="avatar">FOTO</div><div class="meta"><strong>Herbert Spencer</strong> Analogía biológica; el orden jurídico como sistema de coordinación social.</div></div>
+            <div class="mini"><div class="avatar">FOTO</div><div class="meta"><strong>Lester Ward</strong> Evolución y cooperación; planeación social orientada al bienestar.</div></div>
+            <div class="example"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#1E3A8A" stroke-width="2"/><path d="M12 3v18M3 12h18" stroke="#1E3A8A" stroke-width="2"/></svg><div><strong>Ejemplo legislativo:</strong> Constituciones liberales del s. XIX: separación de poderes como órganos diferenciados.</div></div>
+            <div class="cite">Spencer, H. (1860‑94). <em>Principios de Sociología</em>; Ward, L. F. (1883). <em>Dynamic Sociology</em>.</div>
+          </div>
+        </div>
+      </section>
+      <div class="arrow" style="top:calc(100% + 6px)"></div>
+
+      <!-- 3. ESTRUCTURAL‑FUNCIONALISMO -->
+      <section class="node estructural" data-kind>
+        <div class="head">
+          <div class="icon">
+            <!-- Engranajes -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 3h6l.7 2.3 2.3.7v6l-2.3.7L15 15H9l-.7-2.3L6 12V6l2.3-.7L9 3Z" stroke="#fff" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" fill="#fff"/></svg>
+          </div>
+          <h2>ESTRUCTURAL‑FUNCIONALISMO</h2>
+        </div>
+        <div class="body">
+          <div><span class="pill">Principio fundamental</span></div>
+          <div>
+            <p style="margin-top:0;color:var(--gray-700)"><strong>El derecho mantiene el equilibrio social mediante instituciones y normas integradoras.</strong></p>
+            <div class="mini"><div class="avatar">FOTO</div><div class="meta"><strong>Talcott Parsons</strong> El sistema jurídico como subsistema normativo que coordina expectativas.</div></div>
+            <div class="mini"><div class="avatar">FOTO</div><div class="meta"><strong>Robert K. Merton</strong> Funciones manifiestas/latentes y disfunciones legales.</div></div>
+            <div class="example"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12h16M4 8h12M4 16h8" stroke="#1E3A8A" stroke-width="2"/></svg><div><strong>Ejemplo legislativo:</strong> Estado de bienestar: legislación laboral, seguridad social y políticas públicas.</div></div>
+            <div class="cite">Parsons, T. (1951). <em>The Social System</em>; Merton, R. K. (1968). <em>Social Theory and Social Structure</em>.</div>
+          </div>
+        </div>
+      </section>
+      <div class="arrow" style="top:calc(100% + 6px)"></div>
+
+      <!-- 4. INTERACCIONISMO -->
+      <section class="node interaccionismo" data-kind>
+        <div class="head">
+          <div class="icon">
+            <!-- Diálogo -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h10v7H8l-4 3V4Z" stroke="#fff" stroke-width="1.8"/><path d="M10 10h6l4 3V6H10v4Z" stroke="#fff" stroke-width="1.8"/></svg>
+          </div>
+          <h2>INTERACCIONISMO</h2>
+        </div>
+        <div class="body">
+          <div><span class="pill">Principio fundamental</span></div>
+          <div>
+            <p style="margin-top:0;color:var(--gray-700)"><strong>La norma surge de interacciones simbólicas y significados compartidos en la vida cotidiana.</strong></p>
+            <div class="mini"><div class="avatar">FOTO</div><div class="meta"><strong>George H. Mead</strong> Formación del yo y del orden normativo a través del lenguaje y la interacción.</div></div>
+            <div class="mini"><div class="avatar">FOTO</div><div class="meta"><strong>Erving Goffman</strong> Enfoque dramatúrgico: cumplimiento y sanción como “puesta en escena”.</div></div>
+            <div class="example"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18v-6h12v6H6Z" stroke="#1E3A8A" stroke-width="2"/><path d="M9 12V6h6v6" stroke="#1E3A8A" stroke-width="2"/></svg><div><strong>Ejemplo legislativo:</strong> Normativa comunitaria y jurisprudencia que incorpora prácticas sociales e interpretación contextual.</div></div>
+            <div class="cite">Mead, G. H. (1934). <em>Mind, Self and Society</em>; Goffman, E. (1959). <em>The Presentation of Self in Everyday Life</em>.</div>
+          </div>
+        </div>
+      </section>
+      <div class="arrow" style="top:calc(100% + 6px)"></div>
+
+      <!-- 5. MATERIALISMO HISTÓRICO -->
+      <section class="node materialismo" data-kind>
+        <div class="head" style="background:var(--orange-600)">
+          <div class="icon" style="background:rgba(255,255,255,.15)">
+            <!-- Gráfico económico -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20V4M4 20h16M8 16l3-4 3 2 4-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h2>MATERIALISMO HISTÓRICO</h2>
+        </div>
+        <div class="body">
+          <div><span class="pill" style="background:#FFE8D8;color:#9A3412;border-color:#FCD7BD">Principio fundamental</span></div>
+          <div>
+            <p style="margin-top:0;color:var(--gray-700)"><strong>La base económica condiciona la superestructura jurídica y política; el derecho expresa correlaciones de clase.</strong></p>
+            <div class="mini"><div class="avatar">FOTO</div><div class="meta"><strong>Karl Marx</strong> Crítica del derecho como forma de dominación y como campo de lucha.</div></div>
+            <div class="mini"><div class="avatar">FOTO</div><div class="meta"><strong>Friedrich Engels</strong> Propiedad, familia y Estado en perspectiva histórico‑material.</div></div>
+            <div class="example"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 19V7h3v12H5Zm5 0V4h3v15h-3Zm5 0v-9h3v9h-3Z" fill="#1E3A8A"/></svg><div><strong>Ejemplo legislativo:</strong> Normas laborales y sociales fruto de luchas obreras (jornada, sindicatos, seguridad social).</div></div>
+            <div class="cite">Marx, K. (1867). <em>El Capital</em>; Marx & Engels (1848). <em>Manifiesto del Partido Comunista</em>.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reflexión crítica final -->
+      <section class="node" style="border-left:8px solid var(--orange-600)">
+        <div class="head" style="background:linear-gradient(90deg,var(--orange-600),#FB923C)">
+          <div class="icon" style="background:rgba(255,255,255,.18)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a9 9 0 1 0 .001 18.001A9 9 0 0 0 12 3Zm-1 6h2v6h-2V9Zm0 8h2v2h-2v-2Z" fill="#fff"/></svg>
+          </div>
+          <h2>Reflexión crítica</h2>
+        </div>
+        <div class="body" style="grid-template-columns:1fr">
+          <p style="margin:0;color:var(--gray-700)"><strong>El derecho no es neutro:</strong> cada corriente aporta herramientas y límites. El reto contemporáneo es integrar evidencia científica, pluralismo cultural y justicia social sin caer en determinismos.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Nota: Para reemplazar fotos, sustituya el contenido de .avatar por <img src="ruta.jpg" alt="Nombre" style="width:100%;height:100%;border-radius:50%"> -->
+  </div>
+</body>
+</html>
