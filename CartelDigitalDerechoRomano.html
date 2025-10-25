@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legado del Derecho Romano</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            margin-bottom: 2rem;
+            border: 3px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #1a2a6c, #b21f1f, #fdbb2d);
+        }
+
+        .card h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 0.5rem;
+        }
+
+        .card h3 {
+            color: #34495e;
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .card li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .card li::before {
+            content: '⚖️';
+            position: absolute;
+            left: 0;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .concept-item {
+            background: #ecf0f1;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #3498db;
+        }
+
+        .concept-item strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #3498db;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: #e74c3c;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 3px #e74c3c;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            margin: 1rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .conclusion {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            margin-top: 2rem;
+            border: 3px solid #27ae60;
+        }
+
+        .conclusion h2 {
+            color: #27ae60;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: white;
+            padding: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚖️ Legado del Derecho Romano</h1>
+            <p class="subtitle">Fundamentos Jurídicos que Moldearon los Sistemas Contemporáneos</p>
+        </header>
+
+        <div class="grid">
+            <!-- Unidad 1: Antecedentes y Aspectos Generales -->
+            <div class="card">
+                <h2>📜 Antecedentes y Aspectos Generales</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Monarquía (753-509 a.C.)</h3>
+                        <p>Derecho consuetudinario y religioso</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>República (509-27 a.C.)</h3>
+                        <p>Ley de las XII Tablas - Primera codificación</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Imperio (27 a.C.-476 d.C.)</h3>
+                        <p>Desarrollo jurisprudencial y constituciones imperiales</p>
+                    </div>
+                </div>
+
+                <h3>Fuentes del Derecho</h3>
+                <div class="concept-grid">
+                    <div class="concept-item">
+                        <strong>Lex</strong>
+                        <span>Ley formal</span>
+                    </div>
+                    <div class="concept-item">
+                        <strong>Ius</strong>
+                        <span>Derecho jurisprudencial</span>
+                    </div>
+                    <div class="concept-item">
+                        <strong>Mos Maiorum</strong>
+                        <span>Costumbre ancestral</span>
+                    </div>
+                </div>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TSlpXwn5tkM" 
+                            title="Historia del Derecho Romano" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Unidad 2: Personas -->
+            <div class="card">
+                <h2>👥 Derecho de Personas</h2>
+                
+                <h3>Status Libertatis</h3>
+                <ul>
+                    <li><strong>Ingenui:</strong> Nacidos libres</li>
+                    <li><strong>Libertini:</strong> Ex-esclavos liberados</li>
+                    <li><strong>Servi:</strong> Esclavos (res, no personae)</li>
+                </ul>
+
+                <h3>Status Civitatis</h3>
+                <ul>
+                    <li><strong>Cives Romani:</strong> Ciudadanos romanos</li>
+                    <li><strong>Latini:</strong> Ciudadanos latinos</li>
+                    <li><strong>Peregrini:</strong> Extranjeros</li>
+                </ul>
+
+                <h3>Status Familiae</h3>
+                <ul>
+                    <li><strong>Sui Iuris:</strong> Jefe de familia</li>
+                    <li><strong>Alieni Iuris:</strong> Bajo potestad de otro</li>
+                </ul>
+
+                <div class="concept-grid">
+                    <div class="concept-item">
+                        <strong>Capitis Deminutio</strong>
+                        <span>Pérdida de status</span>
+                    </div>
+                    <div class="concept-item">
+                        <strong>Patria Potestas</strong>
+                        <span>Poder del paterfamilias</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unidad 3: Cosas y Derechos Reales -->
+            <div class="card">
+                <h2>🏛️ Cosas y Derechos Reales</h2>
+                
+                <h3>Clasificación de las Cosas (Res)</h3>
+                <ul>
+                    <li><strong>Res divini iuris:</strong> Cosas de derecho divino</li>
+                    <li><strong>Res humani iuris:</strong> Cosas de derecho humano</li>
+                    <li><strong>Res in commercio:</strong> En el comercio</li>
+                    <li><strong>Res extra commercium:</strong> Fuera del comercio</li>
+                </ul>
+
+                <h3>Derechos Reales</h3>
+                <div class="concept-grid">
+                    <div class="concept-item">
+                        <strong>Dominium</strong>
+                        <span>Propiedad plena</span>
+                    </div>
+                    <div class="concept-item">
+                        <strong>Possessio</strong>
+                        <span>Posesión</span>
+                    </div>
+                    <div class="concept-item">
+                        <strong>Servitutes</strong>
+                        <span>Servidumbres</span>
+                    </div>
+                </div>
+
+                <h3>Modos de Adquirir la Propiedad</h3>
+                <ul>
+                    <li>Mancipatio</li>
+                    <li>In iure cessio</li>
+                    <li>Traditio</li>
+                    <li>Usucapio</li>
+                </ul>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/79EGjHRAvMA" 
+                            title="Derechos Reales Romanos" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Unidad 4: Sucesiones -->
+            <div class="card">
+                <h2>📑 Derecho Sucesorio</h2>
+                
+                <h3>Sucesión Mortis Causa</h3>
+                <ul>
+                    <li><strong>Testamentaria:</strong> Por voluntad del difunto</li>
+                    <li><strong>Abintestato:</strong> Por disposición legal</li>
+                </ul>
+
+                <h3>Testamenti Factio</h3>
+                <div class="concept-grid">
+                    <div class="concept-item">
+                        <strong>Activa</strong>
+                        <span>Capacidad para testar</span>
+                    </div>
+                    <div class="concept-item">
+                        <strong>Pasiva</strong>
+                        <span>Capacidad para heredar</span>
+                    </div>
+                </div>
+
+                <h3>Figuras Sucesorias</h3>
+                <ul>
+                    <li><strong>Heres:</strong> Heredero universal</li>
+                    <li><strong>Legatarius:</strong> Legatario singular</li>
+                    <li><strong>Bonorum Possessio:</strong> Posesión pretoria</li>
+                </ul>
+
+                <h3>Principios Fundamentales</h3>
+                <ul>
+                    <li>Nemo pro parte testatus...</li>
+                    <li>Semel heres semper heres</li>
+                    <li>Voluntas testatoris</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Conclusión -->
+        <div class="conclusion">
+            <h2>🎯 Conclusión: Legado en el Sistema Jurídico Mexicano</h2>
+            <p>El Derecho Romano constituye el sustrato fundamental del sistema de civil law que adopta México. Su influencia se manifiesta en:</p>
+            <ul>
+                <li>La estructura del <strong>Código Civil Federal</strong> y estatales</li>
+                <li>La distinción entre <strong>personas físicas y morales</strong></li>
+                <li>La teoría general de <strong>obligaciones y contratos</strong></li>
+                <li>El sistema de <strong>derechos reales</strong> y propiedad</li>
+                <li>La <strong>sucesión testamentaria e intestamentaria</strong></li>
+            </ul>
+            <p>La técnica jurídica romana, caracterizada por su precisión conceptual y sistematicidad, provee al abogado mexicano de herramientas hermenéuticas esenciales para la interpretación y aplicación del derecho positivo contemporáneo.</p>
+        </div>
+
+        <footer>
+            <p>© 2024 Cartel Digital - Derecho Romano | Fuentes académicas verificadas</p>
+        </footer>
+    </div>
+</body>
+</html>
