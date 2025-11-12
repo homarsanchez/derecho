@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrientes Teóricas del Derecho</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .cartel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .introduccion {
+            padding: 40px;
+            background: #f8f9fa;
+            border-bottom: 3px solid #e9ecef;
+        }
+
+        .introduccion h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .introduccion p {
+            line-height: 1.6;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .corrientes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .corriente-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-top: 5px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .corriente-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .teoria-derecho { border-top-color: #3498db; }
+        .positivismo { border-top-color: #e74c3c; }
+        .iusnaturalismo { border-top-color: #27ae60; }
+        .realismo { border-top-color: #f39c12; }
+
+        .corriente-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .postulados, .autores, .implicaciones {
+            margin-bottom: 15px;
+        }
+
+        .postulados h4, .autores h4, .implicaciones h4 {
+            color: #34495e;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .postulados ul, .autores ul, .implicaciones ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .postulados li, .autores li, .implicaciones li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ecf0f1;
+            color: #555;
+        }
+
+        .postulados li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .conclusion {
+            padding: 40px;
+            background: #2c3e50;
+            color: white;
+            border-top: 5px solid #34495e;
+        }
+
+        .conclusion h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .conclusion p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .video-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .video-container iframe {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .corrientes-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cartel-container">
+        <header class="header">
+            <h1>CORRIENTES TEÓRICAS DEL DERECHO</h1>
+            <p>Análisis contrastado de las principales perspectivas jurídicas</p>
+        </header>
+
+        <section class="introduccion">
+            <h2>Introducción al Estudio de las Corrientes Jurídicas</h2>
+            <p>La Teoría del Derecho constituye el fundamento epistemológico que permite comprender las diferentes perspectivas sobre la naturaleza, validez y aplicación del derecho. Este cartel presenta un análisis comparativo de las cuatro corrientes más influyentes, destacando sus postulados fundamentales, autores representativos y implicaciones prácticas en la interpretación jurídica.</p>
+            
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5f6xKThJK_c" title="Teorías del Derecho" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="corrientes-grid">
+            <div class="corriente-card teoria-derecho">
+                <h3>Teoría del Derecho</h3>
+                <div class="postulados">
+                    <h4>Postulados Fundamentales</h4>
+                    <ul>
+                        <li>Estudio sistemático del fenómeno jurídico</li>
+                        <li>Análisis de conceptos jurídicos fundamentales</li>
+                        <li>Reflexión sobre la naturaleza del derecho</li>
+                        <li>Metodología para la interpretación normativa</li>
+                    </ul>
+                </div>
+                <div class="autores">
+                    <h4>Autores Representativos</h4>
+                    <ul>
+                        <li>Hans Kelsen</li>
+                        <li>Herbert Hart</li>
+                        <li>Norberto Bobbio</li>
+                        <li>Alfonso Ruiz Miguel</li>
+                    </ul>
+                </div>
+                <div class="implicaciones">
+                    <h4>Implicaciones Prácticas</h4>
+                    <ul>
+                        <li>Proporciona herramientas conceptuales</li>
+                        <li>Fundamenta la dogmática jurídica</li>
+                        <li>Orienta la argumentación judicial</li>
+                        <li>Contextualiza las corrientes específicas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="corriente-card positivismo">
+                <h3>Positivismo Jurídico</h3>
+                <div class="postulados">
+                    <h4>Postulados Fundamentales</h4>
+                    <ul>
+                        <li>Separación entre derecho y moral</li>
+                        <li>Derecho como mandato del soberano</li>
+                        <li>Validez formal sobre contenido justo</li>
+                        <li>Ciencia jurídica libre de valores</li>
+                    </ul>
+                </div>
+                <div class="autores">
+                    <h4>Autores Representativos</h4>
+                    <ul>
+                        <li>Hans Kelsen</li>
+                        <li>Herbert L.A. Hart</li>
+                        <li>John Austin</li>
+                        <li>Norberto Bobbio</li>
+                    </ul>
+                </div>
+                <div class="implicaciones">
+                    <h4>Implicaciones Prácticas</h4>
+                    <ul>
+                        <li>Seguridad jurídica y predictibilidad</li>
+                        <li>Obediencia a la ley positiva</li>
+                        <li>Formalismo en la aplicación</li>
+                        <li>Neutralidad valorativa del juez</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="corriente-card iusnaturalismo">
+                <h3>Iusnaturalismo</h3>
+                <div class="postulados">
+                    <h4>Postulados Fundamentales</h4>
+                    <ul>
+                        <li>Derecho natural anterior al positivo</li>
+                        <li>Vínculo indisoluble derecho-moral</li>
+                        <li>Contenido justo como criterio de validez</li>
+                        <li>Derechos humanos como fundamento</li>
+                    </ul>
+                </div>
+                <div class="autores">
+                    <h4>Autores Representativos</h4>
+                    <ul>
+                        <li>Tomás de Aquino</li>
+                        <li>John Locke</li>
+                        <li>Lon L. Fuller</li>
+                        <li>John Finnis</li>
+                    </ul>
+                </div>
+                <div class="implicaciones">
+                    <h4>Implicaciones Prácticas</h4>
+                    <ul>
+                        <li>Control de constitucionalidad</li>
+                        <li>Protección de derechos fundamentales</li>
+                        <li>Desobediencia a leyes injustas</li>
+                        <li>Interpretación teleológica</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="corriente-card realismo">
+                <h3>Realismo Jurídico</h3>
+                <div class="postulados">
+                    <h4>Postulados Fundamentales</h4>
+                    <ul>
+                        <li>Derecho como hecho social</li>
+                        <li>Predicción de decisiones judiciales</li>
+                        <li>Escepticismo hacia reglas abstractas</li>
+                        <li>Importancia de factores psicológicos</li>
+                    </ul>
+                </div>
+                <div class="autores">
+                    <h4>Autores Representativos</h4>
+                    <ul>
+                        <li>Oliver Wendell Holmes</li>
+                        <li>Karl Llewellyn</li>
+                        <li>Jerome Frank</li>
+                        <li>Alfonso Ross</li>
+                    </ul>
+                </div>
+                <div class="implicaciones">
+                    <h4>Implicaciones Prácticas</h4>
+                    <ul>
+                        <li>Enfoque en consecuencias prácticas</li>
+                        <li>Estudio sociológico del derecho</li>
+                        <li>Flexibilidad interpretativa</li>
+                        <li>Análisis de comportamiento judicial</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="conclusion">
+            <h2>Conclusión y Reflexión para el Sistema Jurídico Mexicano</h2>
+            <p>El análisis contrastado revela la complementariedad de las corrientes: el positivismo aporta seguridad jurídica, el iusnaturalismo fundamenta los derechos humanos, el realismo contextualiza la aplicación, y la teoría general proporciona el marco conceptual.</p>
+            <p>En el contexto mexicano, la evolución hacia un Estado constitucional de derecho ha integrado elementos de todas estas corrientes. El sistema jurídico combina la seguridad del positivismo (certeza en la aplicación) con los principios iusnaturalistas (derechos humanos y control de convencionalidad) y la perspectiva realista (atención a las consecuencias sociales).</p>
+            <p>Esta síntesis resulta fundamental para enfrentar los desafíos del derecho contemporáneo, donde la mera aplicación formal debe complementarse con una interpretación garantista y socialmente consciente.</p>
+        </section>
+    </div>
+</body>
+</html>
