@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Escudo Ético del Abogado: Integridad y Compromiso Social</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        .cartel-container {
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+            color: white;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeIn 1.5s ease-in;
+        }
+        
+        .titulo-principal {
+            font-size: 3.5em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ffd600, #ffab00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitulo {
+            font-size: 1.4em;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .contenido-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .seccion {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .seccion:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .seccion-titulo {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffd600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .seccion-contenido {
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        
+        .principios-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .principio {
+            background: rgba(255, 215, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #ffd600;
+        }
+        
+        .principio-titulo {
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #ffd600;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .enlaces {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .enlace {
+            color: #ffd600;
+            text-decoration: none;
+            padding: 12px 25px;
+            border: 2px solid #ffd600;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .enlace:hover {
+            background: #ffd600;
+            color: #1a237e;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .icono {
+            font-size: 1.3em;
+        }
+        
+        @media (max-width: 768px) {
+            .cartel-container {
+                padding: 20px;
+                height: auto;
+            }
+            
+            .titulo-principal {
+                font-size: 2.5em;
+            }
+            
+            .contenido-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cartel-container">
+        <header class="header">
+            <h1 class="titulo-principal">El Escudo Ético del Abogado: Integridad y Compromiso Social</h1>
+            <p class="subtitulo">Representación gráfica de los principios normativos que regulan la conducta de los abogados en México</p>
+        </header>
+        
+        <main class="contenido-grid">
+            <section class="seccion">
+                <h2 class="seccion-titulo">
+                    <span class="icono">⚖️</span> Códigos de Ética
+                </h2>
+                <div class="seccion-contenido">
+                    <p>Los códigos de ética constituyen el marco normativo que establece los estándares de conducta profesional para los abogados, garantizando un ejercicio responsable del derecho (Barra Mexicana, 2017).</p>
+                </div>
+            </section>
+            
+            <section class="seccion">
+                <h2 class="seccion-titulo">
+                    <span class="icono">📋</span> Normativas Éticas
+                </h2>
+                <div class="seccion-contenido">
+                    <p>Incluyen disposiciones sobre honorarios, conflictos de interés, publicidad profesional y relaciones con clientes y colegas, regulando todos los aspectos del quehacer jurídico (Cruz Barney, 2015).</p>
+                </div>
+            </section>
+            
+            <section class="seccion">
+                <h2 class="seccion-titulo">
+                    <span class="icono">🔒</span> Secreto Profesional
+                </h2>
+                <div class="seccion-contenido">
+                    <p>Pilar fundamental que protege la confidencialidad de las comunicaciones abogado-cliente, esencial para el derecho de defensa adecuado (Cruz, 2018).</p>
+                </div>
+            </section>
+            
+            <section class="seccion">
+                <h2 class="seccion-titulo">
+                    <span class="icono">⭐</span> Principios Fundamentales
+                </h2>
+                <div class="principios-container">
+                    <div class="principio">
+                        <div class="principio-titulo">Imparcialidad</div>
+                        <div>Ejercicio objetivo del derecho</div>
+                    </div>
+                    <div class="principio">
+                        <div class="principio-titulo">Integridad</div>
+                        <div>Actuación honesta y transparente</div>
+                    </div>
+                    <div class="principio">
+                        <div class="principio-titulo">Justicia</div>
+                        <div>Búsqueda constante del derecho</div>
+                    </div>
+                    <div class="principio">
+                        <div class="principio-titulo">Lealtad</div>
+                        <div>Compromiso con el cliente</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="seccion">
+                <h2 class="seccion-titulo">
+                    <span class="icono">🤝</span> Relación Abogado-Cliente
+                </h2>
+                <div class="seccion-contenido">
+                    <p>El secreto profesional garantiza la confianza necesaria para que el cliente comparta información sensible, fundamental para una defensa efectiva (Cruz Barney, 2017).</p>
+                </div>
+            </section>
+            
+            <section class="seccion">
+                <h2 class="seccion-titulo">
+                    <span class="icono">🎯</span> Toma de Decisiones Éticas
+                </h2>
+                <div class="seccion-contenido">
+                    <p>Los códigos proporcionan el marco para resolver dilemas éticos, promoviendo decisiones basadas en valores profesionales compartidos (Olmeda, 2020).</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <p>Comprometidos con un ejercicio del derecho basado en la integridad y el compromiso social</p>
+            <div class="enlaces">
+                <a href="https://www.bma.org.mx" class="enlace" target="_blank">Barra Mexicana</a>
+                <a href="https://archivos.juridicas.unam.mx" class="enlace" target="_blank">UNAM Jurídicas</a>
+                <a href="https://anade.org.mx" class="enlace" target="_blank">ANADE</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
